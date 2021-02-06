@@ -11,9 +11,5 @@ class Api
         response = Net::HTTP.get_response(uri)
         response.body
       end
-    
-    
-    breweries = Api.new.get_breweries
-    puts breweries
 
 end
