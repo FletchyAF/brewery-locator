@@ -1,8 +1,11 @@
 class FindBrewery
-    attr_accessor :state, :city, :postal_code, :name, :street, :website_url
+    attr_accessor :name, :street, :website_url
 
-    def initialize
-
+    def initialize(hash)
+        hash.each do |key, value|
+            self.send("#{key}=", value)
+        end
+        binding.pry
     end
     
 end

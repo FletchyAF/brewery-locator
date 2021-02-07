@@ -6,19 +6,21 @@ class Api
 
 
     def self.get_breweries_by_state
-        response = HTTParty.get(@@url_by_city)
+        response = HTTParty.get(@@url_by_state)
         state_brewery_hash = {name: response["name"], street: response["street"], website_url: response["website_url"]}
+        FindBrewery.new(state_brewery_hash)
     end
 
     def self.get_breweries_by_city
-        response = HTTParty.get(@@url_by_state)
-        city_brewery_hash = 
+        response = HTTParty.get(@@url_by_city)
+        city_brewery_hash = {name: response["name"], street: response["street"], website_url: response["website_url"]}
+        FindBrewery.new(city_brewery_hash)
     end
 
     def self.get_breweries_by_zip
         response = HTTParty.get(@@url_by_zip)
-        zip_brewery_hash = 
-
+        zip_brewery_hash = {name: response["name"], street: response["street"], website_url: response["website_url"]}
+        FindBrewery.new(zip_brewery_hash)
     end
 
 end

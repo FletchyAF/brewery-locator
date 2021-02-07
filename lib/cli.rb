@@ -25,11 +25,11 @@ class Cli
         elsif option_input == "2"
             puts "Please type your City below:"
             input = gets.strip
-            Api.get_breweries_by_city
+            # Api.get_breweries_by_city
         else
             puts "Please type your Zip Code below:"
             input = gets.strip
-            Api.get_breweries_by_zip
+            # Api.get_breweries_by_zip
         end
         
     end
