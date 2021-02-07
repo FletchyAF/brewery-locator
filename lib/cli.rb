@@ -20,16 +20,16 @@ class Cli
     def prompt_input(option_input)
         if option_input == "1"
             puts "Please type your State below:"
-            input = gets.strip
-            Api.get_breweries_by_state
+            state = gets.strip
+            Api.get_breweries_by_state(state)
         elsif option_input == "2"
             puts "Please type your City below:"
-            input = gets.strip
-            # Api.get_breweries_by_city
+            city = gets.strip
+            Api.get_breweries_by_city(city)
         else
             puts "Please type your Zip Code below:"
-            input = gets.strip
-            # Api.get_breweries_by_zip
+            zip = gets.strip
+            Api.get_breweries_by_zip(zip)
         end
         
     end
