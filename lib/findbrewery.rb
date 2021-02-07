@@ -5,7 +5,5 @@ class FindBrewery
         hash.each do |key, value|
             self.send("#{key}=", value) if self.respond_to?("#{key}=")
         end
-        binding.pry
     end
-    
 end

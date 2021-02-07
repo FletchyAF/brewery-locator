@@ -39,7 +39,9 @@ class Cli
 
     def provide_user_output(breweries)
         puts "The listed breweries based on your search filter are:"
-        
+        breweries.each do |key, value| 
+            puts "Name: #{breweries.name}, address: #{breweries.street}, Website Link: #{breweries.website_url}"
+        end
     end
 
 end
