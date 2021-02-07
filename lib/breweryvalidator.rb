@@ -1,6 +1,6 @@
 class BreweryValidator
 
-    def validate(breweries)
+    def self.validate(breweries)
         breweries.each do |brewery|
             if brewery["name"] == nil || brewery["name"] == ""
                 brewery["name"] = "No name found"
@@ -12,6 +12,6 @@ class BreweryValidator
                 brewery["website_url"] = "No website url"
             end
         end
+        return breweries
     end 
-
 end
