@@ -21,6 +21,7 @@ class Cli
         if option_input == "1"
             puts "Please type your State below:"
             state = gets
+            # needs error handling for invalid city
             found_breweries = Api.get_breweries_by_state(state)
         elsif option_input == "2"
             puts "Please type your City below:"
@@ -37,7 +38,7 @@ class Cli
     end
 
     def provide_user_output(breweries)
-        puts "The listed breweries based on your search filter are:"
+        puts "The listed breweries based on your search filters are:"
         breweries.each {|brewery|
                 puts "Name: #{brewery["name"]} | Address: #{brewery["street"]} | Website Link: #{brewery["website_url"]}" }
     end
