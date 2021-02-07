@@ -1,0 +1,24 @@
+
+[1mFrom:[0m /home/fletchyaf/Development/code/phase1/brewery-locator/lib/cli.rb:24 Cli#prompt_input:
+
+    [1;34m20[0m: [32mdef[0m [1;34mprompt_input[0m(option_input)
+    [1;34m21[0m:     [32mif[0m option_input == [31m[1;31m"[0m[31m1[1;31m"[0m[31m[0m
+    [1;34m22[0m:         puts [31m[1;31m"[0m[31mPlease type your State below:[1;31m"[0m[31m[0m
+    [1;34m23[0m:         state = gets.strip
+ => [1;34m24[0m:         binding.pry
+    [1;34m25[0m:         [1;34m# needs error handling for invalid State[0m
+    [1;34m26[0m:         found_breweries = [1;34;4mApi[0m.get_breweries_by_state(state)
+    [1;34m27[0m:     [32melsif[0m option_input == [31m[1;31m"[0m[31m2[1;31m"[0m[31m[0m
+    [1;34m28[0m:         puts [31m[1;31m"[0m[31mPlease type your City below:[1;31m"[0m[31m[0m
+    [1;34m29[0m:         city = gets.strip
+    [1;34m30[0m:         [1;34m# needs error handling for invalid city[0m
+    [1;34m31[0m:         found_breweries = [1;34;4mApi[0m.get_breweries_by_city(city)
+    [1;34m32[0m:     [32melse[0m
+    [1;34m33[0m:         puts [31m[1;31m"[0m[31mPlease type your Zip Code below:[1;31m"[0m[31m[0m
+    [1;34m34[0m:         zip = gets.strip
+    [1;34m35[0m:         [1;34m# needs error handling for invalid zip[0m
+    [1;34m36[0m:         found_breweries = [1;34;4mApi[0m.get_breweries_by_zip(zip)
+    [1;34m37[0m:     [32mend[0m
+    [1;34m38[0m:     [1;36mself[0m.provide_user_output(found_breweries)
+    [1;34m39[0m: [32mend[0m
+
