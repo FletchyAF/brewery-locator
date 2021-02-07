@@ -41,7 +41,7 @@ class Cli
         breweries = BreweryValidator.validate(breweries)
         puts "The listed breweries based on your search filters are:"
         breweries.each {|brewery|
-                puts "Name: #{brewery["name"]} | Address: #{brewery["street"]} | Website Link: #{brewery["website_url"]}" }
+                puts "Name: #{brewery["name"]} | Address: #{brewery["street"]}, #{brewery["city"]} | Website Link: #{brewery["website_url"]}" }
     end
 
 end

@@ -6,7 +6,10 @@ class BreweryValidator
                 brewery["name"] = "No name found"
             end
             if brewery["street"] == nil || brewery["street"] == ""
-                brewery["street"] = "No address found"
+                brewery["street"] = "No street found"
+            end
+            if brewery["city"] == nil || brewery["city"] == ""
+                brewery["city"] = "No city found"
             end
             if brewery["website_url"] == nil || brewery["website_url"] == ""
                 brewery["website_url"] = "No website url"
