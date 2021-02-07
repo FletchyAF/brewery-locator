@@ -38,10 +38,12 @@ class Cli
     end
 
     def provide_user_output(breweries)
-        breweries = BreweryValidator.validate(breweries)
-        puts "The listed breweries based on your search filters are:"
-        breweries.each {|brewery|
+        if breweries.length > 0
+            breweries = BreweryValidator.validate(breweries)
+            puts "The listed breweries based on your search filters are:"
+            breweries.each {|brewery|
                 puts "Name: #{brewery["name"]} | Address: #{brewery["street"]}, #{brewery["city"]} | Website Link: #{brewery["website_url"]}" }
+        else        
     end
 
 end
