@@ -21,20 +21,24 @@ class Cli
         if option_input == "1"
             puts "Please type your State below:"
             state = gets.strip
+            # needs error handling for invalid State
             found_breweries = Api.get_breweries_by_state(state)
         elsif option_input == "2"
             puts "Please type your City below:"
             city = gets.strip
+            # needs error handling for invalid city
             found_breweries = Api.get_breweries_by_city(city)
         else
             puts "Please type your Zip Code below:"
             zip = gets.strip
+            # needs error handling for invalid zip
             found_breweries = Api.get_breweries_by_zip(zip)
         end
         self.provide_user_output(found_breweries)
     end
 
     def provide_user_output(breweries)
+        puts "The listed breweries based on your search filter are:"
         
     end
 
