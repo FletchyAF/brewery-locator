@@ -2,10 +2,30 @@ class Cli
 
     def welcome_user
         puts "Welcome to the brewery locator app! You're one step closer to puttin' a brew in you!"
+        self.prompt_input_option
     end
 
+    def prompt_input_option
+        puts "Please type the number associated with your desired search filter below:"
+        puts "[1]: State, [2]: City, [3]: Zip Code"
+        option_input = gets.strip
+            if option_input == "1" || option_input == "2" || option_input == "3"
+                self.prompt_input(option_input)
+            else
+                puts "Sorry, that isn't a valid number input."
+                self.prompt_input_option
+            end
+    end
 
-
-
+    def prompt_input(option_input)
+        if option_input == "1"
+            puts "Please type your State below:"
+        elsif option_input == "2"
+            puts "Please type your City below:"
+        else
+            puts "Please type your Zip Code below:"
+        end
+        input = gets.strip
+    end
 
 end
