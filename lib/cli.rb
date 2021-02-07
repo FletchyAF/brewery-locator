@@ -31,6 +31,7 @@ class Cli
             zip = gets
             found_breweries = Api.get_breweries_by_zip(zip)
         else
+            puts "Have a good day."
             return
         end
         self.provide_user_output(found_breweries)
