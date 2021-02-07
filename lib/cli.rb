@@ -7,9 +7,9 @@ class Cli
 
     def prompt_input_option
         puts "Please type the number associated with your desired search filter below:"
-        puts "[1]: State, [2]: City, [3]: Zip Code"
+        puts "[1]: State, [2]: City, [3]: Zip Code, [4]: Exit Program"
         option_input = gets.strip
-            if option_input == "1" || option_input == "2" || option_input == "3"
+            if option_input == "1" || option_input == "2" || option_input == "3" || option_input == "4"
                 self.prompt_input(option_input)
             else
                 puts "Sorry, that isn't a valid number input."
@@ -26,12 +26,15 @@ class Cli
             puts "Please type your City below:"
             city = gets
             found_breweries = Api.get_breweries_by_city(city)
-        else
+        elsif option_input == "3"
             puts "Please type your Zip Code below:"
             zip = gets
             found_breweries = Api.get_breweries_by_zip(zip)
+        else
+            return
         end
         self.provide_user_output(found_breweries)
+        self.prompt_input_option
     end
 
     def provide_user_output(breweries)
@@ -42,8 +45,6 @@ class Cli
                 puts "Name: #{brewery["name"]} | Address: #{brewery["street"]}, #{brewery["city"]} | Website Link: #{brewery["website_url"]}" }
         else       
             puts "No results found."
-            self.prompt_input_option
         end 
     end
-
 end
