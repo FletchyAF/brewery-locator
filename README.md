@@ -17,48 +17,30 @@ breweries in that area!
   - [Acknowledgments](#acknowledgments)
 
 ## Set up Instructions
-
-These instructions will get you a copy of the project up and running on
-your local machine for development and testing purposes. See deployment
-for notes on how to deploy the project on a live system.
-
+Given this is a ruby CLI project, you will need some manner of ubuntu with ruby functionality installed 
+in order to properly use and test this application. Click the green code drop down and select SSH, then click on the
+clipboard icon to copy the link. In your terminal, type 'git clone ' then paste the link and press enter. You'll then navigate
+into the main directory in order to complete installation of the project.
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development
-env running
+Once inside the project folder, type 'bundle install' into your terminal. This will
+install the necessary ruby gems in order to make the project run correctly. If any permissions issues
+arise, you may be able to get it installed using the 'rvmsudo' command before the 'bundle install'
+command. Like so: 'rvmsuod bundle install'
 
-Say what the step will be
+## Testing
 
-    Give the example
-
-And repeat
-
-    until finished
-
-End with an example of getting some data out of the system or using it
-for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-    Give an example
-
-### And coding style tests
-
-Explain what these tests test and why
-
-    Give an example
+With the project fully installed, the program should be run by typing 'ruby bin/run'. The program will then 
+prompt the user for a response to the set of filters. Simply type in one of the numbers correlating with a 
+filter option and press enter. Based of the filter selected, the next input required will be the typed out
+state, city, or zip code of the user's choosing. After which the program will output the breweries filtered
+by the search. The program will loop back through the entirety of the steps until the user chooses to type '4'
+at the initial filter input to exit the program.
 
 ## Built With
 
-  - [Github Docs](https://choosealicense.com/) - Used to choose
-    the license
+  - [Github Docs](https://choosealicense.com/) - Used to choose the license.
 
 ## Contributing
 
@@ -70,33 +52,11 @@ of conduct, and the process for submitting pull requests to us.
   - **Joshua Fletcher** - *Provided entirety of project* -
     [FletchyAF](https://github.com/FletchyAF)
 
-See also the list of
-[contributors](https://github.com/PurpleBooth/a-good-readme-template/contributors)
-who participated in this project.
-
 ## License
 
 MIT License
 
-Copyright (c) [2021] [Joshua Fletcher]
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+This project is licensed under the MIT License - see the LICENSE.md file for details
 
 ## Acknowledgments
 
