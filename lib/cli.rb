@@ -21,31 +21,24 @@ class Cli
         if option_input == "1"
             puts "Please type your State below:"
             state = gets
-            found_breweries = Api.get_breweries_by_state(state)
+            Api.get_breweries_by_state(state)
         elsif option_input == "2"
             puts "Please type your City below:"
             city = gets
-            found_breweries = Api.get_breweries_by_city(city)
+            Api.get_breweries_by_city(city)
         elsif option_input == "3"
             puts "Please type your Zip Code below:"
             zip = gets
-            found_breweries = Api.get_breweries_by_zip(zip)
+            Api.get_breweries_by_zip(zip)
         else
             puts "Have a good day."
             return
         end
-        self.provide_user_output(found_breweries)
+        self.provide_user_output
         self.prompt_input_option
     end
 
-    def provide_user_output(breweries)
-        if breweries.length > 0
-            breweries = BreweryValidator.validate(breweries)
-            puts "The listed breweries based on your search filters are:"
-            breweries.each {|brewery|
-                puts "Name: #{brewery["name"]} | Address: #{brewery["street"]}, #{brewery["city"]} | Website Link: #{brewery["website_url"]}" }
-        else       
-            puts "No results found."
-        end 
-    end
+     def provide_user_output
+        puts Brewery.list_all_breweries
+     end
 end
